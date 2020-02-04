@@ -35,22 +35,27 @@
 <script src="./javascript/character_costumes.js"></script>
 <!-- frame_options -->
 <script src="./javascript/frame_options.js"></script>
+
 </head>
 
 <body>
 
   <div class="nav">
       <dl class="mainTitle">클로저스 로딩 일러 생성기</dl>
-      <table>
+      <div class="subTitle_Area">
+        <span class="explanation">클로저스 로딩 일러 생성기를 통해, 나만의 로딩 일러스트를 만들어 보세요!</span>
+        <span class="subTitle">beta 1.0.0</span>
+      </div>
+      <!-- <table>
         <tr>
             <td class="explanation">
-                클로저스 로딩 일러 생성기를 통해, 나만의 로딩 일러스트를 만들어 보세요!
+                
             </td>
             <td class="subTitle">
                 <strong>beta 1.0.0</strong>
             </td>
         </tr>
-    </table>
+    </table> -->
 </div>
 
 <div class="content_Area">
@@ -387,9 +392,11 @@ var Trans_X = "1";
 img_BG.src = "image/COMMON/BG.png";
 
 img_BG.onload = function() {
-  clearCanvas();
-  drawImage();
-  drawText();
+    if (ctx !== null && ctx !== undefined) {
+        clearCanvas();
+        drawImage();
+        drawText();
+    }
 }
 img_Trans.onload = function() {
   clearCanvas();
@@ -400,13 +407,16 @@ img_Trans.onload = function() {
 function drawImage() {
     ctx.drawImage(img_BG,0,0)
     ctx.drawImage(img,0,0)
+
     if(Trans_X>0) {
       ctx.drawImage(img_Trans, Trans_X, 0)
-  }
-  else {
-    ctx.drawImage(img_Trans, 0, 0)
-}
-ctx.drawImage(img_Frame,0,0)
+    }
+    else {
+      ctx.drawImage(img_Trans, 0, 0)
+    }
+
+    ctx.drawImage(img_Frame,0,0)
+
 }
 
 function select_frame(frame_Value) {
@@ -515,6 +525,7 @@ function drawText_realtime() {
             function clearCanvas() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 drawImage();
+                
             }
 
             function download_img(el, event) {
