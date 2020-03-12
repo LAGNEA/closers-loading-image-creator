@@ -45,7 +45,7 @@
       <div class="subTitle_Area">
         <span class="explanation">클로저스 로딩 일러 생성기를 통해, 나만의 로딩 일러스트를 만들어 보세요!</span>
         <span class="subTitle">beta 1.0.1</span>
-      </div>
+    </div>
       <!-- <table>
         <tr>
             <td class="explanation">
@@ -120,13 +120,13 @@
 
             <div class="loading_Area">
                 <dl class="loading_State">
-                 <label>
-                     <strong>Loading State</strong>
-                     <input type="checkbox" id="loading_Active" name="loading_Active" class="loading_Active" onclick="slide_Disable(), updateCanvas();"/>
-                 </label>
-             </dl>
+                   <label>
+                       <strong>Loading State</strong>
+                       <input type="checkbox" id="loading_Active" name="loading_Active" class="loading_Active" onclick="slide_Disable(), updateCanvas();"/>
+                   </label>
+               </dl>
 
-             <dl class="loading_Slider">
+               <dl class="loading_Slider">
                 <input type="range" name="range" min="0" max="100" value="0" class="slider" id="characterLOADING" style="display:none"> 
             </dl>
 
@@ -189,7 +189,7 @@
 </body>
 
 <script type="text/javascript">
- if(window.addEventListener){
+   if(window.addEventListener){
     window.addEventListener('load', Init, false);
 }
 
@@ -274,6 +274,7 @@ function categoryChange(e) {
         "체크 플래그": "_CHECK_FLAG",
         "은반의 앙상블": "_KISSANDCRY",
         "트랙슈터": "_TRACKSHOOT",
+        "창해의 로망스": "_OCEAN_ROMANCE",
         "만우절": "_TS",
         "큐티 하르파스": "_HALPAS",
         "섹시 틴달로스": "_TINDALOS",
@@ -411,12 +412,12 @@ function drawImage() {
 
     if(Trans_X>0) {
       ctx.drawImage(img_Trans, Trans_X, 0)
-    }
-    else {
+  }
+  else {
       ctx.drawImage(img_Trans, 0, 0)
-    }
+  }
 
-    ctx.drawImage(img_Frame,0,0)
+  ctx.drawImage(img_Frame,0,0)
 
 }
 
