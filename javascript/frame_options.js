@@ -74,6 +74,7 @@ var frame_Options = [
     { "frame_Text" : "VENTUS", "frame_Value" : "ACH_3" },
     { "frame_Text" : "TERRA", "frame_Value" : "ACH_4" },
     { "frame_Text" : "부산행 이벤트", "frame_Value" : "BUSAN" },
+    { "frame_Text" : "전도유망 클로저", "frame_Value" : "NEWBIE" },
     { "frame_Text" : "대나무숲 이벤트", "frame_Value" : "BAMBOO" },
     { "frame_Text" : "국제 연금술 협회원", "frame_Value" : "ALCHEMY_1" },
     { "frame_Text" : "국제 연금술 협회장", "frame_Value" : "ALCHEMY_2" },
