@@ -24,6 +24,7 @@ var frame_Options = [
     { "frame_Text" : "태스크포스 : T.리벨리온", "frame_Value" : "TF_3" },
     { "frame_Text" : "태스크포스 : 좋은 친구들", "frame_Value" : "TF_4" },
     { "frame_Text" : "태스크포스 : 퀸 오브 하트", "frame_Value" : "TF_5" },
+    { "frame_Text" : "태스크포스 : 검은손", "frame_Value" : "TF_6" },
     { "frame_Text" : "곰돌이랜드", "frame_Value" : "GREMORY" },
     { "frame_Text" : "몽환세계의 쌍둥이", "frame_Value" : "DREAM_1" },
     { "frame_Text" : "몽환세계의 주인", "frame_Value" : "DREAM_2" },
