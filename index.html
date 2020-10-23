@@ -35,6 +35,8 @@
 <script src="./javascript/character_costumes.js"></script>
 <!-- frame_options -->
 <script src="./javascript/frame_options.js"></script>
+<!-- rank_options -->
+<script src="./javascript/rank_options.js"></script>
 
 </head>
 
@@ -114,6 +116,14 @@
                         </td>
                         <td class="character_Area_Detail">
                             <select name="frameSkin" id="frameSkin" onchange="select_frame(this.options[this.selectedIndex].value);"></select>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong> Rank </strong> 
+                        </td>
+                        <td class="character_Area_Detail">
+                            <select name="closerRank" id="closerRank" onchange="select_rank(this.options[this.selectedIndex].value);"></select>
                         </td>
                     </tr>
                 </table>
@@ -405,10 +415,19 @@ for(var frame_i = 0, frame_l = frame_Options.length; frame_i < frame_l; frame_i+
   frameSkin.options.add( new Option(frame_option.frame_Text, frame_option.frame_Value, frame_option.selected) );
 }
 
+var closerRank = document.getElementById('closerRank');
+// from ./javascript/rank_options.js
+for(var rank_i = 0, rank_l = rank_Options.length; rank_i < rank_l; rank_i++){
+  var rank_option = rank_Options[rank_i];
+  closerRank.options.add( new Option(rank_option.rank_Text, rank_option.rank_Value, rank_option.selected) );
+}
+
+
 var img = new Image();
 var img_BG = new Image();
 var img_Frame = new Image();
 var img_Trans = new Image();
+var img_Rank = new Image();
 var Trans_X = "1";
 img_BG.src = "image/COMMON/BG.png";
 
@@ -437,12 +456,22 @@ function drawImage() {
   }
 
   ctx.drawImage(img_Frame,0,0)
+  ctx.drawImage(img_Rank,0,0)
 
 }
 
 function select_frame(frame_Value) {
   img_Frame.src = "image/FRAME/" + frame_Value + ".png"
   img_Frame.onload = function() {
+      clearCanvas();
+      drawImage();
+      drawText();
+  }
+}
+
+function select_rank(rank_Value) {
+  img_Rank.src = "image/RANK/" + rank_Value + ".png"
+  img_Rank.onload = function() {
       clearCanvas();
       drawImage();
       drawText();
@@ -482,6 +511,7 @@ function drawText() {
 
         ctx.fillText("LV " + document.getElementById("characterLEVEL").value, canvas.width-10, 56);
     }
+    /* 로딩 % 삭제 
     if(loading_Active.checked) {
         ctx.font="23px NanumBarunGothic";
         ctx.strokeText(characterLOADING.value + " %",canvas.width-12, 153);
@@ -491,7 +521,7 @@ function drawText() {
     {
         ctx.strokeText(" ",canvas.width-12, 153);
         ctx.fillText(" ",canvas.width-12, 153);
-    }
+    }*/
 }
 
 function drawText_realtime() {
@@ -521,18 +551,20 @@ function drawText_realtime() {
 
                 characterLOADING.oninput = function() {
                     Trans_X = this.value*"5.12";
+                    
                     if(loading_Active.checked) {
-                        ctx.font="23px NanumBarunGothic";
-                        ctx.strokeText(characterLOADING.value + " %",canvas.width-12, 153);
-                        ctx.fillText(characterLOADING.value + " %",canvas.width-12, 153);
+                        /* 로딩 % 부분 지움 */
+                        //ctx.font="23px NanumBarunGothic";
+                        //ctx.strokeText(characterLOADING.value + " %",canvas.width-12, 153);
+                        //ctx.fillText(characterLOADING.value + " %",canvas.width-12, 153);
                         clearCanvas();
                         drawImage();
                         drawText();
                     }
                     else
                     {
-                        ctx.strokeText(" ",canvas.width-12, 153);
-                        ctx.fillText(" ",canvas.width-12, 153);
+                        //ctx.strokeText(" ",canvas.width-12, 153);
+                        //ctx.fillText(" ",canvas.width-12, 153);
                     }
                 }
             }
