@@ -1,6 +1,7 @@
 var frame_Options = [
     { "frame_Text" : "프레임을 선택하세요", "frame_Value" : "NULL" },
     { "frame_Text" : "샤이닝 스타", "frame_Value" : "U1" },
+    { "frame_Text" : "솔로몬의 예복", "frame_Value" : "U2" },
     { "frame_Text" : "응축된 암흑의 광휘", "frame_Value" : "R1" },
     { "frame_Text" : "사이버네틱", "frame_Value" : "R2" },
     { "frame_Text" : "지고의 날개", "frame_Value" : "R3" },
