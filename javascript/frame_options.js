@@ -62,6 +62,7 @@ var frame_Options = [
     { "frame_Text" : "6차 이벤트 라이선스[프리미엄]", "frame_Value" : "LICENSE_PREMIUM_6" },
     { "frame_Text" : "7차 이벤트 라이선스", "frame_Value" : "LICENSE_7" },
     { "frame_Text" : "7차 이벤트 라이선스[프리미엄]", "frame_Value" : "LICENSE_PREMIUM_7" },
+    { "frame_Text" : "크리스마스 장식", "frame_Value" : "CHRISTMAS" },
     { "frame_Text" : "대단한 서클의 비주얼 프레임", "frame_Value" : "CIRCLE" },
     { "frame_Text" : "네코제 이벤트 비주얼 프레임", "frame_Value" : "NECOJE" },
     { "frame_Text" : "신년 이벤트", "frame_Value" : "NEWYEAR" },
